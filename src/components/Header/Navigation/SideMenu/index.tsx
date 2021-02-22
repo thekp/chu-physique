@@ -1,0 +1,105 @@
+import React, { useRef } from "react";
+import { motion, useCycle } from "framer-motion";
+import styled from "@emotion/styled";
+import { css } from "@emotion/react";
+
+import BurgerIcon from "./BurgerIcon";
+import MenuList from "./MenuList";
+import { useDimensions } from "#hooks/useDimensions";
+
+const SideContainer = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background: #fff;
+`;
+
+const NavWrapper = styled(motion.nav)`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 60%;
+  transform: scaleX(-1);
+`;
+
+const GhostWrapper = styled(motion.div)`
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  background: black;
+  cursor: e-resize;
+  transform: scaleX(-1);
+`;
+
+const transitions = {
+  open: {
+    type: "spring",
+    stiffness: 20,
+    restDelta: 2,
+  },
+  closed: {
+    delay: 0.5,
+    type: "spring",
+    stiffness: 400,
+    damping: 40,
+  },
+};
+
+const sidebar = {
+  open: (height = 1000) => ({
+    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+    transition: {
+      type: "spring",
+      stiffness: 20,
+      restDelta: 2,
+    },
+  }),
+  closed: {
+    clipPath: "circle(30px at 40px 40px)",
+    transition: {
+      delay: 0.2,
+      type: "spring",
+      stiffness: 300,
+      damping: 40,
+    },
+  },
+};
+
+const SideMenu = () => {
+  const [isOpen, toggleOpen] = useCycle(false, true);
+  const containerRef = useRef(null);
+  const { height } = useDimensions(containerRef);
+
+  return (
+    <>
+      <GhostWrapper
+        initial="closed"
+        animate={isOpen ? "open" : "closed"}
+        variants={sidebar}
+        onClick={() => toggleOpen()}
+        isOpen={isOpen}
+      />
+
+      <NavWrapper
+        initial="closed"
+        animate={isOpen ? "open" : "closed"}
+        custom={height}
+        ref={containerRef}
+      >
+        <SideContainer variants={sidebar} isOpen={isOpen}>
+          <MenuList />
+        </SideContainer>
+        <BurgerIcon toggle={() => toggleOpen()} />
+      </NavWrapper>
+    </>
+  );
+};
+
+export default SideMenu;
