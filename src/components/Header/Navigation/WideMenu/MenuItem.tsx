@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   motion,
   useCycle,
@@ -8,23 +9,10 @@ import {
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
-import navItems from "#constants/navItems";
-
-const NavWrapper = styled.div`
-  margin-top: 4px;
-  ${({ theme }) => css`
-    padding: ${theme.size.GEL_SPACING_DBL};
-  `};
-`;
-
-const NavList = styled.ul`
-  display: flex;
-`;
-
 const ItemWrapper = styled(motion.li)`
   list-style: none;
   cursor: pointer;
-  padding: 0 16px;
+  padding: 20px;
 `;
 
 const ItemText = styled(motion.p)`
@@ -42,7 +30,7 @@ const ChildrenItemIcon = styled(motion.span)`
 
 const ChildrenList = styled(motion.ul)`
   position: absolute;
-  margin-top: 22px;
+  margin-top: 20px;
   ${({ theme }) => css`
     background: ${theme.color.secondary};
   `};
@@ -113,30 +101,28 @@ const MenuItem: React.FC<NavProps> = ({ item }) => {
   const hasChildrenItems = item.children.length > 0;
 
   return (
-    <ItemWrapper
-      onHoverStart={() => hasChildrenItems && toggleOpen()}
-      onHoverEnd={() => hasChildrenItems && toggleOpen()}
-    >
+    <ItemWrapper onClick={() => hasChildrenItems && toggleOpen()}>
       <ItemText whileHover={{ scale: 1.1 }}>
-        {item.name}
+        <Link href={item.link}>{item.name}</Link>
         {hasChildrenItems && (
           <ChildrenItemIcon>{isOpen ? "▲" : "▼"}</ChildrenItemIcon>
         )}
       </ItemText>
-
-      <ChildrenList
-        variants={newListVariants}
-        initial="closed"
-        animate={isOpen ? "open" : "closed"}
-      >
-        {item.children.map(childItem => (
-          <ItemWrapper key={childItem.name}>
-            <ChildItemText whileHover={{ scale: 1.05 }}>
-              {childItem.name}
-            </ChildItemText>
-          </ItemWrapper>
-        ))}
-      </ChildrenList>
+      {hasChildrenItems && (
+        <ChildrenList
+          variants={newListVariants}
+          initial="closed"
+          animate={isOpen ? "open" : "closed"}
+        >
+          {item.children.map(childItem => (
+            <ItemWrapper key={childItem.name}>
+              <ChildItemText whileHover={{ scale: 1.05 }}>
+                <Link href={childItem.link}>{childItem.name}</Link>
+              </ChildItemText>
+            </ItemWrapper>
+          ))}
+        </ChildrenList>
+      )}
     </ItemWrapper>
   );
 };

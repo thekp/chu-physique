@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   motion,
   useCycle,
@@ -62,16 +63,7 @@ const listVariants = {
   },
 };
 
-// const iconVariants = {
-//   open: {
-//     rotate: 0,
-//   },
-//   closed: {
-//     rotate: -180,
-//   },
-// };
-
-const MenuItem = ({ item }) => {
+const MenuItem = ({ item, toggleSideMenu }) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const hasChildrenItems = item.children.length > 0;
   const [animate, cycle] = useCycle(
@@ -84,17 +76,11 @@ const MenuItem = ({ item }) => {
       <ItemText
         layout
         whileHover={{ scale: 1.05 }}
-        onClick={() => hasChildrenItems && toggleOpen()}
+        onClick={() => (hasChildrenItems ? toggleOpen() : toggleSideMenu())}
       >
-        {item.name}
+        <Link href={item.link}>{item.name}</Link>
         {hasChildrenItems && (
-          <ChildrenItemIcon
-          // variant={iconVariants}
-          // initial="closed"
-          // animate={isOpen ? "open" : "closed"}
-          >
-            {isOpen ? "▲" : "▼"}
-          </ChildrenItemIcon>
+          <ChildrenItemIcon>{isOpen ? "▲" : "▼"}</ChildrenItemIcon>
         )}
       </ItemText>
       <AnimatePresence>
@@ -107,8 +93,11 @@ const MenuItem = ({ item }) => {
           >
             {item.children.map(childItem => (
               <ItemWrapper layout key={childItem.name} variants={itemVariants}>
-                <ItemText whileHover={{ scale: 1.05 }}>
-                  {childItem.name}
+                <ItemText
+                  whileHover={{ scale: 1.05 }}
+                  onClick={() => toggleSideMenu()}
+                >
+                  <Link href={childItem.link}>{childItem.name}</Link>
                 </ItemText>
               </ItemWrapper>
             ))}

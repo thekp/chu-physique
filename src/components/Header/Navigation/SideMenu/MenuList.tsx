@@ -22,11 +22,11 @@ const variants = {
   },
 };
 
-const MenuList = () => (
+const MenuList = ({ toggleSideMenu }) => (
   <AnimateSharedLayout>
     <ListWrapper variants={variants}>
       {navItems.map(item => (
-        <MenuItem key={item.name} item={item} />
+        <MenuItem key={item.name} item={item} toggleSideMenu={toggleSideMenu} />
       ))}
     </ListWrapper>
   </AnimateSharedLayout>

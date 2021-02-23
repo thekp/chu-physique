@@ -1,11 +1,11 @@
 import React from "react";
+import Link from "next/link";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
 import metadata from "#constants/metadata";
-import Navigation from "./Navigation";
 
-const BrandLink = styled.a`
+const BrandWrapper = styled.div`
   font-style: italic;
   font-weight: 800;
   ${({ theme }) => css`
@@ -13,9 +13,7 @@ const BrandLink = styled.a`
     letter-spacing: ${theme.size.GEL_SPACING_QUAT};
     color: ${theme.color.secondary};
   `};
-`;
 
-const BrandWrapper = styled.div`
   ${({ theme }) => css`
     padding: ${theme.size.GEL_SPACING_DBL};
   `}
@@ -26,7 +24,7 @@ type BrandProps = {};
 const Brand: React.FC<BrandProps> = () => {
   return (
     <BrandWrapper>
-      <BrandLink>{metadata.BRAND}</BrandLink>
+      <Link href="/">{metadata.BRAND}</Link>
     </BrandWrapper>
   );
 };

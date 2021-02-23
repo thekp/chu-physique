@@ -7,13 +7,6 @@ import WideMenu from "./WideMenu";
 import useMediaQuery from "#hooks/useMediaQuery";
 import navItems from "#constants/navItems";
 
-const NavWrapper = styled.div`
-  margin-top: 4px;
-  ${({ theme }) => css`
-    padding: ${theme.size.GEL_SPACING_DBL};
-  `};
-`;
-
 const NavList = styled.ul`
   display: flex;
 `;
@@ -30,7 +23,7 @@ type NavProps = {};
 
 const Navigation: React.FC<NavProps> = () => {
   const isMobile = useMediaQuery(`(max-width: 680px)`);
-  return <NavWrapper>{isMobile ? <SideMenu /> : <WideMenu />}</NavWrapper>;
+  return isMobile ? <SideMenu /> : <WideMenu />;
 };
 
 export default Navigation;

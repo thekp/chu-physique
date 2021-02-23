@@ -82,8 +82,8 @@ const SideMenu = () => {
         custom={height}
         ref={containerRef}
       >
-        <SideContainer variants={sidebar()} isOpen={isOpen}>
-          <MenuList />
+        <SideContainer variants={sidebar()}>
+          <MenuList toggleSideMenu={toggleOpen} />
         </SideContainer>
         <BurgerIcon toggle={() => toggleOpen()} />
       </NavWrapper>
