@@ -23,6 +23,8 @@ const BrandWrapper = styled.div`
 `;
 
 const HeaderWrapper = styled.div`
+  position: absolute;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

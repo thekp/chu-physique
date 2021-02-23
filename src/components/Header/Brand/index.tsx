@@ -9,14 +9,16 @@ const BrandWrapper = styled.div`
   font-style: italic;
   font-weight: 800;
   ${({ theme }) => css`
+    padding: ${theme.size.GEL_SPACING_DBL};
     font-size: ${theme.size.GEL_SPACING_TRPL};
     letter-spacing: ${theme.size.GEL_SPACING_QUAT};
     color: ${theme.color.secondary};
-  `};
 
-  ${({ theme }) => css`
-    padding: ${theme.size.GEL_SPACING_DBL};
-  `}
+    @media (max-width: ${theme.size.GEL_GROUP_3_SCREEN_WIDTH_MAX}) {
+      font-size: 16px;
+      padding: ${theme.size.GEL_SPACING_HLF_TRPL};
+    }
+  `};
 `;
 
 type BrandProps = {};

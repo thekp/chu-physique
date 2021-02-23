@@ -10,9 +10,9 @@ export const GEL_GROUP_1_SCREEN_WIDTH_MIN = `15rem`; // 240px
 export const GEL_GROUP_1_SCREEN_WIDTH_MAX = `24.9375rem`; // 399px
 
 export const GEL_GROUP_2_SCREEN_WIDTH_MIN = `25rem`; // 400px
-export const GEL_GROUP_2_SCREEN_WIDTH_MAX = `37.4375rem`; // 599px
+export const GEL_GROUP_2_SCREEN_WIDTH_MAX = `42.4375rem`; // 599px
 
-export const GEL_GROUP_3_SCREEN_WIDTH_MIN = `37.5rem`; // 600px
+export const GEL_GROUP_3_SCREEN_WIDTH_MIN = "42.5rem"; // 600px
 export const GEL_GROUP_3_SCREEN_WIDTH_MAX = `62.9375rem`; // 1007px
 
 export const GEL_GROUP_4_SCREEN_WIDTH_MIN = `63rem`; // 1008px
