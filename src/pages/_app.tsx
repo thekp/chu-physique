@@ -3,7 +3,7 @@ import { jsx, ThemeProvider } from "@emotion/react";
 
 import Header from "#components/Header";
 import metadata from "#constants/metadata";
-import { size } from "#styles/index";
+import { color, size } from "#styles/index";
 import "#styles/globals.css";
 
 const theme = {
@@ -11,6 +11,7 @@ const theme = {
     primary: "hotpink",
     text: { primary: "#FDFDFD" },
   },
+  color,
   size,
 };
 

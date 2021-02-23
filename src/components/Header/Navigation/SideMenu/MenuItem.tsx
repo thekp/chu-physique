@@ -9,7 +9,9 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
 const ItemText = styled(motion.p)`
-  color: black;
+  ${({ theme }) => css`
+    color: ${theme.color.secondary};
+  `};
   width: 100%;
   font-size: 24px;
   padding: 24px;
@@ -20,8 +22,7 @@ const ItemWrapper = styled(motion.li)`
   cursor: pointer;
 
   &:hover {
-    background-color: #eee;
-    opacity: 0.5;
+    background-color: #999;
   }
 `;
 
@@ -60,14 +61,14 @@ const listVariants = {
   },
 };
 
-const iconVariants = {
-  open: {
-    rotate: 0,
-  },
-  closed: {
-    rotate: -180,
-  },
-};
+// const iconVariants = {
+//   open: {
+//     rotate: 0,
+//   },
+//   closed: {
+//     rotate: -180,
+//   },
+// };
 
 const MenuItem = ({ item }) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -87,9 +88,9 @@ const MenuItem = ({ item }) => {
         {item.name}
         {hasChildrenItems && (
           <ChildrenItemIcon
-            variant={iconVariants}
-            initial="closed"
-            animate={isOpen ? "open" : "closed"}
+          // variant={iconVariants}
+          // initial="closed"
+          // animate={isOpen ? "open" : "closed"}
           >
             {isOpen ? "▲" : "▼"}
           </ChildrenItemIcon>

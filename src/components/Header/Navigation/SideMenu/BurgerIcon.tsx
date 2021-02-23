@@ -8,8 +8,7 @@ const BurgerButton = styled.button`
   border: none;
   cursor: pointer;
   position: absolute;
-  top: 18px;
-  left: 15px;
+  top: 4px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -18,16 +17,15 @@ const BurgerButton = styled.button`
 
 const Path = props => (
   <motion.path
-    fill="transparent"
     strokeWidth="3"
-    stroke="hsl(0, 0%, 18%)"
+    stroke="#FDFDFD"
     strokeLinecap="round"
     {...props}
   />
 );
 
 const BurgerSvg = () => (
-  <svg width="23" height="23" viewBox="0 0 23 23">
+  <svg width="24" height="24" viewBox="0 0 23 24">
     <Path
       variants={{
         closed: { d: "M 2 2.5 L 20 2.5" },

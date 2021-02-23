@@ -7,12 +7,13 @@ import Navigation from "./Navigation";
 
 const HomeLink = styled.a`
   font-style: italic;
-
+  font-weight: 800;
+  margin
   ${({ theme }) => css`
     font-size: ${theme.size.GEL_SPACING_TRPL};
     letter-spacing: ${theme.size.GEL_SPACING_QUAT};
-    font-weight: 800;
-  `}
+    color: ${theme.color.secondary};
+  `};
 `;
 
 const BrandWrapper = styled.div`
@@ -23,9 +24,13 @@ const BrandWrapper = styled.div`
 
 const HeaderWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
   ${({ theme }) => css`
-    padding: ${theme.size.GEL_SPACING};
-    color: ${theme.colors.text.primary};
+    background: ${theme.color.primary};
+    color: ${theme.color.secondary};
   `};
 `;
 

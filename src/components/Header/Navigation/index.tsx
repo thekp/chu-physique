@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
 import SideMenu from "./SideMenu";
+import useMediaQuery from "#hooks/useMediaQuery";
 import navItems from "#constants/navItems";
 
 const NavWrapper = styled.div`
@@ -17,7 +18,8 @@ const NavList = styled.ul`
 
 const NavItem = styled.li`
   ${({ theme }) => css`
-    padding: ${theme.size.GEL_SPACING};
+    padding: 0 ${theme.size.GEL_SPACING_DBL};
+    color: ${theme.color.secondary};
   `};
   list-style-type: none;
 `;
@@ -25,17 +27,20 @@ const NavItem = styled.li`
 type NavProps = {};
 
 const Navigation: FunctionComponent<HeaderProps> = () => {
+  const isBreakpoint = useMediaQuery(605);
+
   return (
-    <>
-      {/* <NavWrapper>
+    <NavWrapper>
+      {isBreakpoint ? (
+        <SideMenu />
+      ) : (
         <NavList>
           {navItems.map(({ name, link, children }) => (
             <NavItem>{name}</NavItem>
           ))}
         </NavList>
-      </NavWrapper> */}
-      <SideMenu />
-    </>
+      )}
+    </NavWrapper>
   );
 };
 

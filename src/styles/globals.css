@@ -1,9 +1,12 @@
 html,
 body {
-  background: black;
   padding: 0;
   margin: 0;
   font-family: Roboto;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #0055ff 0%, rgb(0, 153, 255) 100%);
+  overflow: hidden;
 }
 
 a {
@@ -15,12 +18,4 @@ a {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-body {
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(180deg, #0055ff 0%, rgb(0, 153, 255) 100%);
-  overflow: hidden;
-  display: flex;
 }

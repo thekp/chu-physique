@@ -13,7 +13,10 @@ const SideContainer = styled(motion.div)`
   bottom: 0;
   right: 0;
   width: 100%;
-  background: #fff;
+
+  ${({ theme }) => css`
+    background: ${theme.color.primary};
+  `};
 `;
 
 const NavWrapper = styled(motion.nav)`
@@ -52,7 +55,7 @@ const transitions = {
   },
 };
 
-const sidebar = {
+const sidebar = override => ({
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
     transition: {
@@ -62,7 +65,7 @@ const sidebar = {
     },
   }),
   closed: {
-    clipPath: "circle(30px at 40px 40px)",
+    clipPath: override ? "circle(0px at 0px 0px)" : "circle(1px at 1px 1px)",
     transition: {
       delay: 0.2,
       type: "spring",
@@ -70,7 +73,7 @@ const sidebar = {
       damping: 40,
     },
   },
-};
+});
 
 const SideMenu = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -82,7 +85,7 @@ const SideMenu = () => {
       <GhostWrapper
         initial="closed"
         animate={isOpen ? "open" : "closed"}
-        variants={sidebar}
+        variants={sidebar(true)}
         onClick={() => toggleOpen()}
         isOpen={isOpen}
       />
@@ -93,7 +96,7 @@ const SideMenu = () => {
         custom={height}
         ref={containerRef}
       >
-        <SideContainer variants={sidebar} isOpen={isOpen}>
+        <SideContainer variants={sidebar()} isOpen={isOpen}>
           <MenuList />
         </SideContainer>
         <BurgerIcon toggle={() => toggleOpen()} />
