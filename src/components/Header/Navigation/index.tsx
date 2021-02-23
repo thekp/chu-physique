@@ -28,16 +28,16 @@ const NavItem = styled.li`
 type NavProps = {};
 
 const Navigation: FunctionComponent<HeaderProps> = () => {
-  const isBreakpoint = useMediaQuery(680);
+  const isMobile = useMediaQuery(`(max-width: 680px)`);
 
   return (
     <NavWrapper>
-      {isBreakpoint ? (
+      {isMobile ? (
         <SideMenu />
       ) : (
         <NavList>
           {navItems.map(({ name, link, children }) => (
-            <NavItem>{name}</NavItem>
+            <NavItem key={name}>{name}</NavItem>
           ))}
         </NavList>
       )}
