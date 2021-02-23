@@ -15,8 +15,6 @@ const useMediaQuery = mediaQueryString => {
     return () => mediaQueryList.removeListener(setMediaMatchHandler);
   }, [mediaQueryString]);
 
-  console.log(queryMatch);
-
   return queryMatch;
 };
 

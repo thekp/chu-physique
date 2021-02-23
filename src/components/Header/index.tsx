@@ -4,6 +4,7 @@ import { css } from "@emotion/react";
 
 import metadata from "#constants/metadata";
 import Navigation from "./Navigation";
+import Brand from "./Brand";
 
 const HomeLink = styled.a`
   font-style: italic;
@@ -38,9 +39,7 @@ type HeaderProps = {};
 const Header: FunctionComponent<HeaderProps> = () => {
   return (
     <HeaderWrapper>
-      <BrandWrapper>
-        <HomeLink>{metadata.BRAND}</HomeLink>
-      </BrandWrapper>
+      <Brand />
       <Navigation />
     </HeaderWrapper>
   );
