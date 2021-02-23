@@ -41,26 +41,12 @@ const GhostWrapper = styled(motion.div)`
   transform: scaleX(-1);
 `;
 
-const transitions = {
-  open: {
-    type: "spring",
-    stiffness: 20,
-    restDelta: 2,
-  },
-  closed: {
-    delay: 0.5,
-    type: "spring",
-    stiffness: 400,
-    damping: 40,
-  },
-};
-
 const sidebar = override => ({
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
     transition: {
       type: "spring",
-      stiffness: 20,
+      stiffness: 15,
       restDelta: 2,
     },
   }),

@@ -31,11 +31,5 @@ module.exports = {
   },
   rules: {
     "linebreak-style": "off",
-    "prettier/prettier": [
-      "error",
-      {
-        endOfLine: "false",
-      },
-    ],
   },
 };

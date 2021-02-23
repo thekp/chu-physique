@@ -1,8 +1,9 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
 import SideMenu from "./SideMenu";
+import WideMenu from "./WideMenu";
 import useMediaQuery from "#hooks/useMediaQuery";
 import navItems from "#constants/navItems";
 
@@ -27,22 +28,9 @@ const NavItem = styled.li`
 
 type NavProps = {};
 
-const Navigation: FunctionComponent<HeaderProps> = () => {
+const Navigation: React.FC<NavProps> = () => {
   const isMobile = useMediaQuery(`(max-width: 680px)`);
-
-  return (
-    <NavWrapper>
-      {isMobile ? (
-        <SideMenu />
-      ) : (
-        <NavList>
-          {navItems.map(({ name, link, children }) => (
-            <NavItem key={name}>{name}</NavItem>
-          ))}
-        </NavList>
-      )}
-    </NavWrapper>
-  );
+  return <NavWrapper>{isMobile ? <SideMenu /> : <WideMenu />}</NavWrapper>;
 };
 
 export default Navigation;

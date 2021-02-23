@@ -13,7 +13,7 @@ const ItemText = styled(motion.p)`
     color: ${theme.color.secondary};
   `};
   width: 100%;
-  font-size: 24px;
+  font-size: 20px;
   padding: 24px;
 `;
 
@@ -52,6 +52,7 @@ const itemVariants = {
     },
   },
 };
+
 const listVariants = {
   open: {
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },
