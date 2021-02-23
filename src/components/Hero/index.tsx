@@ -82,7 +82,6 @@ const HeroTitle = styled.h1`
 `;
 
 const HeroSubWrapper = styled.div`
-  font-family: "Shippori Mincho", serif;
   font-style: italic;
   font-size: 16px !important;
 
@@ -99,6 +98,7 @@ const HeroSubTitle = styled.h2`
 
 const HeroLinkWrapper = styled.div`
   margin-top: 24px;
+  text-decoration: underline;
 `;
 
 const MyHero = () => {
