@@ -116,9 +116,11 @@ const MenuItem: React.FC<NavProps> = ({ item }) => {
         >
           {item.children.map(childItem => (
             <ItemWrapper key={childItem.name}>
-              <ChildItemText whileHover={{ scale: 1.05 }}>
-                <Link href={childItem.link}>{childItem.name}</Link>
-              </ChildItemText>
+              <Link href={childItem.link}>
+                <ChildItemText whileHover={{ scale: 1.05 }}>
+                  {childItem.name}
+                </ChildItemText>
+              </Link>
             </ItemWrapper>
           ))}
         </ChildrenList>

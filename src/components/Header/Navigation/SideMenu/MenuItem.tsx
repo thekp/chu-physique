@@ -93,12 +93,14 @@ const MenuItem = ({ item, toggleSideMenu }) => {
           >
             {item.children.map(childItem => (
               <ItemWrapper layout key={childItem.name} variants={itemVariants}>
-                <ItemText
-                  whileHover={{ scale: 1.05 }}
-                  onClick={() => toggleSideMenu()}
-                >
-                  <Link href={childItem.link}>{childItem.name}</Link>
-                </ItemText>
+                <Link href={childItem.link}>
+                  <ItemText
+                    whileHover={{ scale: 1.05 }}
+                    onClick={() => toggleSideMenu()}
+                  >
+                    {childItem.name}
+                  </ItemText>
+                </Link>
               </ItemWrapper>
             ))}
           </ChildrenList>

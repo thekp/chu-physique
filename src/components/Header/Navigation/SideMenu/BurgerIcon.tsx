@@ -38,7 +38,7 @@ const BurgerSvg = () => (
         closed: { opacity: 1 },
         open: { opacity: 0 },
       }}
-      transition={{ duration: 0.2 }}
+      transition={{ duration: 0.3 }}
     />
     <Path
       variants={{
