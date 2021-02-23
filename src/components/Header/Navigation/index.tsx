@@ -7,6 +7,7 @@ import useMediaQuery from "#hooks/useMediaQuery";
 import navItems from "#constants/navItems";
 
 const NavWrapper = styled.div`
+  margin-top: 4px;
   ${({ theme }) => css`
     padding: ${theme.size.GEL_SPACING_DBL};
   `};
@@ -27,7 +28,7 @@ const NavItem = styled.li`
 type NavProps = {};
 
 const Navigation: FunctionComponent<HeaderProps> = () => {
-  const isBreakpoint = useMediaQuery(605);
+  const isBreakpoint = useMediaQuery(680);
 
   return (
     <NavWrapper>

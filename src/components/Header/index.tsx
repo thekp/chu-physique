@@ -8,7 +8,6 @@ import Navigation from "./Navigation";
 const HomeLink = styled.a`
   font-style: italic;
   font-weight: 800;
-  margin
   ${({ theme }) => css`
     font-size: ${theme.size.GEL_SPACING_TRPL};
     letter-spacing: ${theme.size.GEL_SPACING_QUAT};
