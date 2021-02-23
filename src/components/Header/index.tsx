@@ -6,32 +6,16 @@ import metadata from "#constants/metadata";
 import Navigation from "./Navigation";
 import Brand from "./Brand";
 
-const HomeLink = styled.a`
-  font-style: italic;
-  font-weight: 800;
-  ${({ theme }) => css`
-    font-size: ${theme.size.GEL_SPACING_TRPL};
-    letter-spacing: ${theme.size.GEL_SPACING_QUAT};
-    color: ${theme.color.secondary};
-  `};
-`;
-
-const BrandWrapper = styled.div`
-  ${({ theme }) => css`
-    padding: ${theme.size.GEL_SPACING_DBL};
-  `}
-`;
-
-const HeaderWrapper = styled.div`
+const HeaderWrapper = styled.header`
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
 
   ${({ theme }) => css`
-    background: ${theme.color.primary};
+    // background: ${theme.color.primary};
     color: ${theme.color.secondary};
   `};
 `;

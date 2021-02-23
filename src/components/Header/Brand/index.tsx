@@ -5,7 +5,7 @@ import { css } from "@emotion/react";
 
 import metadata from "#constants/metadata";
 
-const BrandWrapper = styled.div`
+const BrandWrapper = styled.span`
   font-style: italic;
   font-weight: 800;
   ${({ theme }) => css`
@@ -14,7 +14,7 @@ const BrandWrapper = styled.div`
     letter-spacing: ${theme.size.GEL_SPACING_QUAT};
     color: ${theme.color.secondary};
 
-    @media (max-width: ${theme.size.GEL_GROUP_3_SCREEN_WIDTH_MAX}) {
+    @media (max-width: ${theme.size.GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
       font-size: 16px;
       padding: ${theme.size.GEL_SPACING_HLF_TRPL};
     }
