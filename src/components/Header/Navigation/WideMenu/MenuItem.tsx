@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import {
   motion,
@@ -32,7 +32,7 @@ const ChildrenList = styled(motion.ul)`
   position: absolute;
   margin-top: 20px;
   ${({ theme }) => css`
-    background: ${theme.color.secondary};
+    background: ${theme.color.primary};
   `};
 `;
 
@@ -42,7 +42,7 @@ const ChildItemText = styled(motion.p)`
   padding: 16px 0;
 
   ${({ theme }) => css`
-    color: ${theme.color.primary};
+    color: ${theme.color.secondary};
   `};
 `;
 
@@ -98,6 +98,7 @@ type NavProps = {};
 
 const MenuItem: React.FC<NavProps> = ({ item }) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
+
   const hasChildrenItems = item.children.length > 0;
 
   return (

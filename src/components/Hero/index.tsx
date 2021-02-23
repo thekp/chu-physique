@@ -58,7 +58,8 @@ const MyHeroOverlay = styled.div`
 const HeroTitleWrapper = styled.div`
   /* Center vertically and horizontally */
   position: absolute;
-  top: 50%;
+  width: 90%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
@@ -71,21 +72,33 @@ const HeroTitle = styled.h1`
   text-transform: none;
   font-weight: 500;
   font-style: normal;
-  font-size: 68px;
+  font-size: 64px;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.size.GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
+      font-size: 40px;
+    }
+  `};
+`;
+
+const HeroSubWrapper = styled.div`
+  font-family: "Shippori Mincho", serif;
+  font-style: italic;
+  font-size: 16px !important;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.size.GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
+      font-size: 12px !important;
+    }
+  `};
 `;
 
 const HeroSubTitle = styled.h2`
-  font-family: "Shippori Mincho", serif;
-  font-style: italic;
-  font-size: 16px;
+  margin-top: 16px;
 `;
 
-const HeroLinkWrapper = styled.span`
-  margin-top: 16px;
-  font-family: "Shippori Mincho", serif;
-  font-style: italic;
-  font-size: 16px;
-  border-bottom: 1px solid #fdfdfd;
+const HeroLinkWrapper = styled.div`
+  margin-top: 24px;
 `;
 
 const MyHero = () => {
@@ -95,12 +108,14 @@ const MyHero = () => {
       <HeroWrapper>
         <HeroTitleWrapper>
           <HeroTitle>CHU PHYSQIUE</HeroTitle>
-          <HeroSubTitle>
-            Let’s Work Together To Achieve Your Ideal Physique
-          </HeroSubTitle>
-          <HeroLinkWrapper>
-            <Link href="/about/my-journey">Read About My Journey</Link>
-          </HeroLinkWrapper>
+          <HeroSubWrapper>
+            <HeroSubTitle>
+              Let’s Work Together To Achieve Your Ideal Physique
+            </HeroSubTitle>
+            <HeroLinkWrapper>
+              <Link href="/about/my-journey">Learn More About My Journey</Link>
+            </HeroLinkWrapper>
+          </HeroSubWrapper>
         </HeroTitleWrapper>
       </HeroWrapper>
     </HeroSection>

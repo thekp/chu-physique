@@ -26,6 +26,7 @@ const NavWrapper = styled(motion.nav)`
   bottom: 0;
   width: 60%;
   transform: scaleX(-1);
+  z-index: 99;
 `;
 
 const GhostWrapper = styled(motion.div)`
