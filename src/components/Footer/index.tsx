@@ -18,7 +18,7 @@ const BrandWrapper = styled.div`
 `;
 
 const BackToTopButton = styled.button`
-  margin: 8px;
+  margin: 8px 20px;
   padding: 4px;
   background: transparent;
   box-shadow: 0px 0px 0px transparent;
@@ -45,7 +45,6 @@ const ContactDetailsText = styled.p`
 
 const KhoaPhan = styled.p`
   font-size: 12px;
-  font-style: italic;
   margin: 0 24px;
 `;
 
@@ -61,7 +60,7 @@ const Footer: React.FC<FooterProps> = () => {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          Back to Top
+          BACK TO TOP
         </BackToTopButton>
       </BrandWrapper>
       <ContactDetailsWrapper
@@ -71,7 +70,7 @@ const Footer: React.FC<FooterProps> = () => {
           <a href="https://www.instagram.com/leungchupt">INSTAGRAM</a>
         </ContactDetailsText>
         <ContactDetailsText>
-          <a href="https://www.linkedin.com/in/leung-chu/" target="_blank">
+          <a href="https://www.linkedin.com/in/leung-chu" target="_blank">
             LINKEDIN
           </a>
         </ContactDetailsText>
@@ -89,7 +88,11 @@ const Footer: React.FC<FooterProps> = () => {
       </ContactDetailsWrapper>
 
       <ContactDetailsWrapper style={{ justifyContent: "flex-end" }}>
-        <KhoaPhan>Website Created By Khoa Phan</KhoaPhan>
+        <KhoaPhan>
+          <a href="https://www.linkedin.com/in/thekp" target="_blank">
+            WEBSITE CREATED BY KHOA PHAN
+          </a>
+        </KhoaPhan>
       </ContactDetailsWrapper>
     </FooterWrapper>
   );

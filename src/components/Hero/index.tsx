@@ -29,7 +29,7 @@ const HeroWrapper = styled.div`
         .GEL_GROUP_3_SCREEN_WIDTH_MIN}) and (max-width: ${theme.size
         .GEL_GROUP_4_SCREEN_WIDTH_MAX}) {
       background-image: url(${MY_HERO_IMG_PATH});
-      background-attachment: scroll;
+      background-attachment: fixed;
       background-position: 50% 20%;
       background-size: cover;
       background-repeat: no-repeat;

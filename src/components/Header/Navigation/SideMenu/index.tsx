@@ -41,7 +41,7 @@ const GhostWrapper = styled(motion.div)`
 
 const sidebar = override => ({
   open: (height = 1000) => ({
-    width: override ? "100%" : "50%",
+    width: override ? "100%" : "60%",
     clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
     transition: {
       duration: 2,

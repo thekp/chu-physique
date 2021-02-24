@@ -48,7 +48,7 @@ const CardContainer = styled.div`
 
 const CardWrapper = styled.div`
   width: 45%;
-  margin: 0 24px;
+  margin: 16px 24px;
 
   ${({ theme }) => css`
     @media (max-width: ${theme.size.GEL_GROUP_4_SCREEN_WIDTH_MAX}) {
@@ -80,7 +80,9 @@ const CardText = styled.p`
   line-height: 2rem;
 `;
 
-const CardLinkWrapper = styled.span``;
+const CardLinkWrapper = styled.span`
+  text-decoration: underline;
+`;
 
 const Home = () => {
   return (
@@ -141,12 +143,13 @@ const Home = () => {
               </CardText>
             </CardWrapper>
           </CardContainer>
-          <CardLinkWrapper>
-            <CardText>
-              If you are interested, click below to learn more.
-            </CardText>
-            <Link href="/online-coaching">LEARN MORE</Link>
-          </CardLinkWrapper>
+          <CardText>
+            If you are interested,{" "}
+            <CardLinkWrapper>
+              <Link href="/online-coaching">CLICK HERE</Link>
+            </CardLinkWrapper>{" "}
+            to learn more.
+          </CardText>
         </SectionWrapper>
       </MainWrapper>
     </>
