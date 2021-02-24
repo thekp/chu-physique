@@ -42,7 +42,7 @@ const HeroWrapper = styled.div`
       background-position: 80% 20%;
       background-repeat: no-repeat;
       background-size: cover;
-      min-height: 60vh;
+      min-height: 100vh;
     }
   `};
 `;
