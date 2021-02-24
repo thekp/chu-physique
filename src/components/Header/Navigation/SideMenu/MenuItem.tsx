@@ -43,7 +43,7 @@ const itemVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      y: { duration: 0.5, type: "spring", bounce: 0.2 },
+      y: { stiffness: 1000, velocity: 100 },
     },
   },
   closed: {

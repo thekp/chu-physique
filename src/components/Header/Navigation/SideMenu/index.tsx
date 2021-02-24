@@ -12,8 +12,7 @@ const SideContainer = styled(motion.div)`
   top: 0;
   bottom: 0;
   right: 0;
-  width: 100%;
-
+  width: 60%;
   ${({ theme }) => css`
     background: ${theme.color.primary};
   `};
@@ -29,6 +28,7 @@ const NavWrapper = styled(motion.div)`
 
 const GhostWrapper = styled(motion.div)`
   height: 100%;
+  width: 100%;
   position: fixed;
   top: 0;
   right: 0;
@@ -41,17 +41,19 @@ const GhostWrapper = styled(motion.div)`
 
 const sidebar = override => ({
   open: (height = 1000) => ({
-    width: override ? "100%" : "60%",
-    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+    clipPath: `circle(${height * 2 + 200}px at 25px 25px)`,
+    // width: override
+    //   ? ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"]
+    //   : ["10%", "20%", "30%", "40%", "50%", "60%"],
     transition: {
-      duration: 0.5,
+      duration: 5,
       type: "spring",
-      bounce: 0.2,
     },
   }),
   closed: {
-    clipPath: override ? "circle(0px at 0px 0px)" : "circle(0px at 1px 1px)",
-    width: "100%",
+    clipPath: override
+      ? "circle(0px at 20px 20px)"
+      : "circle(0px at 20px 20px)",
     transform: "scaleX(-1)",
     transition: {
       delay: 0.5,
