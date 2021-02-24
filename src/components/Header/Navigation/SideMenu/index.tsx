@@ -41,22 +41,20 @@ const GhostWrapper = styled(motion.div)`
 
 const sidebar = override => ({
   open: (height = 1000) => ({
-    width: override ? "100%" : "60%",
-    clipPath: `circle(${height * 2 + 200}px at 0px 0px)`,
+    width: override ? "100%" : "50%",
+    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
     transition: {
-      delay: 0.2,
+      duration: 2,
       type: "spring",
-      stiffness: 20,
-      restDelta: 10,
+      bounce: 0,
     },
   }),
   closed: {
-    clipPath: override ? "circle(0px at 0px 0px)" : "circle(0px at 1px 1px)",
+    clipPath: "circle(0px at 0px 0px)",
     width: "100%",
     transform: "scaleX(-1)",
-
     transition: {
-      delay: 0.2,
+      delay: 0.5,
       type: "spring",
       stiffness: 300,
       damping: 40,

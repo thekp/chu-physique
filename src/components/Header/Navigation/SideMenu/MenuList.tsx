@@ -11,6 +11,7 @@ const ListWrapper = styled(motion.ul)`
   position: absolute;
   top: 80px;
   width: 100%;
+  text-align: right;
 `;
 
 const variants = {
