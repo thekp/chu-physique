@@ -10,8 +10,8 @@ import navItems from "#constants/navItems";
 type NavProps = {};
 
 const Navigation: React.FC<NavProps> = () => {
-  const isMobile = useMediaQuery(`(max-width: 680px)`);
-  return <nav>{isMobile ? <SideMenu /> : <WideMenu />}</nav>;
+  const isMobile = useMediaQuery(`(max-width: 840px)`);
+  return <nav>{!isMobile ? <WideMenu /> : <SideMenu />}</nav>;
 };
 
 export default Navigation;

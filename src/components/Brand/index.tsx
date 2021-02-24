@@ -14,7 +14,7 @@ const BrandWrapper = styled.span`
     letter-spacing: ${theme.size.GEL_SPACING_QUAT};
     color: ${theme.color.secondary};
 
-    @media (max-width: ${theme.size.GEL_GROUP_3_SCREEN_WIDTH_MIN}) {
+    @media (max-width: ${theme.size.GEL_GROUP_2_SCREEN_WIDTH_MAX}) {
       font-size: 16px;
       padding: ${theme.size.GEL_SPACING_HLF_TRPL};
     }

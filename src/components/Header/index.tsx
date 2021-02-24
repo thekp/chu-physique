@@ -3,9 +3,8 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
 import metadata from "#constants/metadata";
-import useNavContext from "#hooks/useNavContext";
 import Navigation from "./Navigation";
-import Brand from "./Brand";
+import Brand from "#components/Brand";
 
 const HeaderWrapper = styled.header`
   position: fixed;

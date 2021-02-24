@@ -51,7 +51,7 @@ const sidebar = override => ({
     },
   }),
   closed: {
-    clipPath: "circle(0px at 0px 0px)",
+    clipPath: override ? "circle(0px at 0px 0px)" : "circle(0px at 1px 1px)",
     width: "100%",
     transform: "scaleX(-1)",
 

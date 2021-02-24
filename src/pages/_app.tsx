@@ -4,6 +4,7 @@ import { jsx, ThemeProvider } from "@emotion/react";
 
 import { NavContextProvider } from "#contexts/navigation";
 import Header from "#components/Header";
+import Footer from "#components/Footer";
 import metadata from "#constants/metadata";
 import { color, size } from "#styles/index";
 import "#styles/globals.css";
@@ -27,6 +28,7 @@ const MyApp = ({ Component, pageProps }) => {
       <NavContextProvider>
         <Header />
         <Component {...pageProps} />
+        <Footer />
       </NavContextProvider>
     </ThemeProvider>
   );
