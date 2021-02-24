@@ -67,16 +67,23 @@ const Footer: React.FC<FooterProps> = () => {
         style={{ borderBottom: "1px solid #fff", margin: "0 16px" }}
       >
         <ContactDetailsText>
-          <a href="https://www.instagram.com/leungchupt">INSTAGRAM</a>
+          <a href="https://www.instagram.com/leungchupt" rel="noreferrer">
+            INSTAGRAM
+          </a>
         </ContactDetailsText>
         <ContactDetailsText>
-          <a href="https://www.linkedin.com/in/leung-chu" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/leung-chu"
+            target="_blank"
+            rel="noreferrer"
+          >
             LINKEDIN
           </a>
         </ContactDetailsText>
         <ContactDetailsText>
           <a
             href="https://www.youtube.com/channel/UCkKgsuGNHUHVivJF6AesvxA"
+            rel="noreferrer"
             target="_blank"
           >
             YOUTUBE
@@ -92,7 +99,11 @@ const Footer: React.FC<FooterProps> = () => {
           <span lang="en-GB">
             {`\u00A9`} {`${new Date().getFullYear()}`}{" "}
           </span>
-          <a href="https://www.linkedin.com/in/thekp" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/thekp"
+            rel="noreferrer"
+            target="_blank"
+          >
             WEBSITE CREATED BY KHOA PHAN
           </a>
         </KhoaPhan>

@@ -67,7 +67,7 @@ const CardImageWrapper = styled.div`
   margin-bottom: 16px;
 `;
 
-const CardTitle = styled.h3`
+const CardTitle = styled.h2`
   color: #5d5457;
   text-align: center;
   white-space: pre-wrap;
@@ -99,7 +99,7 @@ const Home = () => {
             If you are interested in working with me to better yourself and
             improve your lifestyle,{" "}
             <LinkWrapper>
-              <Link href="/contact">CLICK HERE</Link>
+              <Link href="/contact">contact me</Link>
             </LinkWrapper>{" "}
             to learn more.
           </PageParagraph>
@@ -146,7 +146,9 @@ const Home = () => {
           <CardText>
             If you are interested,{" "}
             <CardLinkWrapper>
-              <Link href="/online-coaching">CLICK HERE</Link>
+              <Link href="/online-coaching">
+                find out more about online coaching
+              </Link>
             </CardLinkWrapper>{" "}
             to learn more.
           </CardText>

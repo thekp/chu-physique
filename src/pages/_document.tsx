@@ -16,6 +16,7 @@ class MyDocument extends Document {
             as="font"
             crossOrigin=""
           />
+          <meta name="description" content="CHU PHYSQIUE Website"></meta>
         </Head>
         <body>
           <Main />
