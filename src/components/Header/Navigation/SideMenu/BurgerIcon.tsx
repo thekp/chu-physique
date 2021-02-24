@@ -7,8 +7,7 @@ const BurgerButton = styled.button`
   outline: none;
   border: none;
   cursor: pointer;
-  position: absolute;
-  top: 0px;
+  position: relative;
   width: 50px;
   height: 50px;
   border-radius: 50%;

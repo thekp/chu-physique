@@ -22,7 +22,8 @@
         "#components/*": ["src/components/*"],
         "#styles/*": ["src/styles/*"],
         "#constants/*": ["src/constants/*"],
-        "#hooks/*": ["src/hooks/*"]
+        "#hooks/*": ["src/hooks/*"],
+        "#contexts/*": ["src/contexts/*"]
       }
     },
     "exclude": ["node_modules"],

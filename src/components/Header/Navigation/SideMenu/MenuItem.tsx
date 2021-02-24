@@ -39,6 +39,7 @@ const ChildrenList = styled(motion.ul)`
 
 const itemVariants = {
   open: {
+    display: "block",
     y: 0,
     opacity: 1,
     transition: {
@@ -50,6 +51,9 @@ const itemVariants = {
     opacity: 0,
     transition: {
       y: { stiffness: 1000 },
+    },
+    transitionEnd: {
+      display: "none",
     },
   },
 };

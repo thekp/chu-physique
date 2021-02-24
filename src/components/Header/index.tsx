@@ -3,12 +3,13 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
 import metadata from "#constants/metadata";
+import useNavContext from "#hooks/useNavContext";
 import Navigation from "./Navigation";
 import Brand from "./Brand";
 
 const HeaderWrapper = styled.header`
   position: fixed;
-  z-index: 5;
+  z-index: 4;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

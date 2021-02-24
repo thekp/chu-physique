@@ -19,18 +19,15 @@ const SideContainer = styled(motion.div)`
   `};
 `;
 
-const NavWrapper = styled(motion.nav)`
+const NavWrapper = styled(motion.div)`
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 60%;
-  transform: scaleX(-1);
   z-index: 99;
 `;
 
 const GhostWrapper = styled(motion.div)`
-  width: 100%;
   height: 100%;
   position: fixed;
   top: 0;
@@ -39,20 +36,25 @@ const GhostWrapper = styled(motion.div)`
   opacity: 0.5;
   background: black;
   cursor: e-resize;
-  transform: scaleX(-1);
+  z-index: 99;
 `;
 
 const sidebar = override => ({
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+    width: override ? "100%" : "60%",
+    clipPath: `circle(${height * 2 + 200}px at 0px 0px)`,
     transition: {
+      delay: 0.2,
       type: "spring",
-      stiffness: 15,
-      restDelta: 2,
+      stiffness: 20,
+      restDelta: 10,
     },
   }),
   closed: {
-    clipPath: override ? "circle(0px at 0px 0px)" : "circle(1px at 1px 1px)",
+    clipPath: "circle(0px at 0px 0px)",
+    width: "100%",
+    transform: "scaleX(-1)",
+
     transition: {
       delay: 0.2,
       type: "spring",
@@ -82,6 +84,7 @@ const SideMenu = () => {
         animate={isOpen ? "open" : "closed"}
         custom={height}
         ref={containerRef}
+        isOpen={isOpen}
       >
         <SideContainer variants={sidebar()}>
           <MenuList toggleSideMenu={toggleOpen} />

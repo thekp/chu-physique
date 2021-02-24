@@ -9,6 +9,7 @@ const navItems = [
     ],
   },
   { name: "Client Testimonials", link: "/client-testimonials", children: [] },
+  { name: "Online Coaching", link: "/online-coaching", children: [] },
   { name: "Contact", link: "/contact", children: [] },
 ];
 

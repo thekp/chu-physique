@@ -1,3 +1,4 @@
+import React, { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "@emotion/styled";
@@ -40,7 +41,7 @@ const HeroWrapper = styled.div`
       background-position: 50%;
       background-repeat: no-repeat;
       background-size: cover;
-      min-height: 100vh;
+      min-height: 50vh;
     }
   `};
 `;
