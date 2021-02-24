@@ -89,6 +89,9 @@ const Footer: React.FC<FooterProps> = () => {
 
       <ContactDetailsWrapper style={{ justifyContent: "flex-end" }}>
         <KhoaPhan>
+          <span lang="en-GB">
+            {`\u00A9`} {`${new Date().getFullYear()}`}{" "}
+          </span>
           <a href="https://www.linkedin.com/in/thekp" target="_blank">
             WEBSITE CREATED BY KHOA PHAN
           </a>

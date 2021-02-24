@@ -100,8 +100,8 @@ const Home = () => {
             improve your lifestyle,{" "}
             <LinkWrapper>
               <Link href="/contact">CLICK HERE</Link>
-            </LinkWrapper>
-            .
+            </LinkWrapper>{" "}
+            to learn more.
           </PageParagraph>
         </SectionWrapper>
 

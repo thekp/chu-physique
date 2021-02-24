@@ -11,7 +11,12 @@ type NavProps = {};
 
 const Navigation: React.FC<NavProps> = () => {
   const isMobile = useMediaQuery(`(max-width: 840px)`);
-  return <nav>{!isMobile ? <WideMenu /> : <SideMenu />}</nav>;
+
+  if (isMobile === null) {
+    return null;
+  }
+
+  return <nav>{isMobile ? <SideMenu /> : <WideMenu />}</nav>;
 };
 
 export default Navigation;

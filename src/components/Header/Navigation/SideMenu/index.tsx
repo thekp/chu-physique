@@ -44,13 +44,13 @@ const sidebar = override => ({
     width: override ? "100%" : "60%",
     clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
     transition: {
-      duration: 2,
+      duration: 0.5,
       type: "spring",
-      bounce: 0,
+      bounce: 0.2,
     },
   }),
   closed: {
-    clipPath: "circle(0px at 0px 0px)",
+    clipPath: override ? "circle(0px at 0px 0px)" : "circle(0px at 1px 1px)",
     width: "100%",
     transform: "scaleX(-1)",
     transition: {

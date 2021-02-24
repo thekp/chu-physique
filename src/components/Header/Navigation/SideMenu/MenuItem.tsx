@@ -23,7 +23,7 @@ const ItemWrapper = styled(motion.li)`
   cursor: pointer;
 
   &:hover {
-    background-color: #999;
+    background-color: #2f2f2f;
   }
 `;
 
@@ -43,7 +43,7 @@ const itemVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      y: { stiffness: 1000, velocity: 100 },
+      y: { duration: 0.5, type: "spring", bounce: 0.2 },
     },
   },
   closed: {
