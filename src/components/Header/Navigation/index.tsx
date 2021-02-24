@@ -9,7 +9,7 @@ import navItems from "#constants/navItems";
 
 type NavProps = {};
 
-const Navigation: React.FC<NavProps> = () => {
+const Navigation: React.FC<NavProps> = ({}) => {
   const isMobile = useMediaQuery(`(max-width: 840px)`);
 
   if (isMobile === null) {

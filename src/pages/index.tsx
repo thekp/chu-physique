@@ -99,9 +99,8 @@ const Home = () => {
             If you are interested in working with me to better yourself and
             improve your lifestyle,{" "}
             <LinkWrapper>
-              <Link href="/contact">contact me</Link>
-            </LinkWrapper>{" "}
-            to learn more.
+              <Link href="/contact">contact me to learn more.</Link>
+            </LinkWrapper>
           </PageParagraph>
         </SectionWrapper>
 
@@ -147,10 +146,9 @@ const Home = () => {
             If you are interested,{" "}
             <CardLinkWrapper>
               <Link href="/online-coaching">
-                find out more about online coaching
+                find out more about online coaching here.
               </Link>
-            </CardLinkWrapper>{" "}
-            to learn more.
+            </CardLinkWrapper>
           </CardText>
         </SectionWrapper>
       </MainWrapper>

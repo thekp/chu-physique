@@ -18,7 +18,9 @@ const theme = {
   size,
 };
 
-const MyApp = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps, router }) => {
+  const isTransparent = router.pathname === "/";
+
   return (
     <ThemeProvider theme={theme}>
       <Head>
@@ -26,7 +28,7 @@ const MyApp = ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <NavContextProvider>
-        <Header />
+        <Header isTransparent={isTransparent} />
         <Component {...pageProps} />
         <Footer />
       </NavContextProvider>

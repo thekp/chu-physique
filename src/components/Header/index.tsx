@@ -14,15 +14,17 @@ const HeaderWrapper = styled.header`
   justify-content: space-between;
   width: 100%;
 
-  ${({ theme, isScrolling }) => css`
-    background: ${isScrolling ? theme.color.primary : "transparent"};
+  ${({ theme, isScrolling, isTransparent }) => css`
+    background: ${isScrolling || !isTransparent
+      ? theme.color.primary
+      : "transparent"};
     color: ${theme.color.secondary};
   `};
 `;
 
 type HeaderProps = {};
 
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC<HeaderProps> = ({ isTransparent }) => {
   const [isScrolling, toggleScrolling] = useState(false);
 
   const handleScrolling = () => {
@@ -40,7 +42,7 @@ const Header: React.FC<HeaderProps> = () => {
   }, [handleScrolling]);
 
   return (
-    <HeaderWrapper isScrolling={isScrolling}>
+    <HeaderWrapper isTransparent={isTransparent} isScrolling={isScrolling}>
       <Brand />
       <Navigation />
     </HeaderWrapper>
