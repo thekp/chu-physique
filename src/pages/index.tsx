@@ -5,6 +5,8 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
 import Hero from "#components/Hero";
+import PromoCard, { CardContainer } from "#components/PromoCard";
+import promos from "#constants/home/promos";
 
 const MainWrapper = styled.main`
   max-width: 1080px;
@@ -38,12 +40,6 @@ const LinkWrapper = styled.span`
 
 const SectionWrapper = styled.section`
   margin: 16px 0;
-`;
-
-const CardContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 `;
 
 const CardWrapper = styled.div`
@@ -106,41 +102,9 @@ const Home = () => {
 
         <SectionWrapper>
           <CardContainer>
-            <CardWrapper>
-              <CardImageWrapper>
-                <Image
-                  src="/assets/chuman.jpg"
-                  alt="Picture of Leung looking into the mirror holding weights"
-                  layout="responsive"
-                  height={355}
-                  width={470}
-                />
-              </CardImageWrapper>
-              <CardTitle>1 - 1 PT SESSIONS</CardTitle>
-              <CardText>
-                If you prefer to have someone guide you in person, whether it’s
-                because you’re not confident or consistent with training, then
-                get in contact with me and we can arrange specific training
-                goals for yourself.
-              </CardText>
-            </CardWrapper>
-            <CardWrapper>
-              <CardImageWrapper>
-                <Image
-                  src="/assets/chu-arm.jpg"
-                  alt="Picture of Leung looking into the mirror holding weights"
-                  layout="responsive"
-                  height={355}
-                  width={470}
-                />
-              </CardImageWrapper>
-              <CardTitle>ONLINE COACHING</CardTitle>
-              <CardText>
-                Live too far away to train with me in person? No worries. I have
-                recently added online fitness coaching where I can help guide
-                you to your training goals online.
-              </CardText>
-            </CardWrapper>
+            {promos.map(promo => (
+              <PromoCard details={promo} />
+            ))}
           </CardContainer>
           <CardText>
             If you are interested,{" "}

@@ -76,11 +76,12 @@ const MenuItem = ({ item, toggleSideMenu }) => {
   );
 
   return (
-    <ItemWrapper layout variants={itemVariants}>
+    <ItemWrapper layout variants={itemVariants} style={{ zIndex: "99" }}>
       <ItemText
         layout
         whileHover={{ scale: 1.05 }}
         onClick={() => (hasChildrenItems ? toggleOpen() : toggleSideMenu())}
+        style={{ zIndex: "99" }}
       >
         <Link href={item.link}>{item.name}</Link>
         {hasChildrenItems && (
@@ -90,16 +91,21 @@ const MenuItem = ({ item, toggleSideMenu }) => {
       <AnimatePresence>
         {isOpen && hasChildrenItems && (
           <ChildrenList
-            layout
-            variants={listVariants}
-            initial="closed"
-            animate={isOpen ? "open" : "closed"}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: [0, 0, 0, 0, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+            }}
           >
             {item.children.map(childItem => (
-              <ItemWrapper layout key={childItem.name} variants={itemVariants}>
-                {console.log(childItem)}
+              <ItemWrapper
+                layout
+                key={childItem.name}
+                variants={itemVariants}
+                animate={isOpen ? "open" : "closed"}
+              >
                 <Link href={childItem.link}>
                   <ItemText
+                    style={{ zIndex: "-99" }}
                     whileHover={{ scale: 1.05 }}
                     onClick={() => toggleSideMenu()}
                   >
