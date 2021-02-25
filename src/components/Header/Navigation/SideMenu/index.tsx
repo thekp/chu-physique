@@ -43,7 +43,7 @@ const sidebar = override => ({
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 25px 25px)`,
     transition: {
-      duration: 2,
+      duration: 1.5,
       type: "spring",
     },
   }),
