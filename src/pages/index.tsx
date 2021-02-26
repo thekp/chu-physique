@@ -6,14 +6,8 @@ import { css } from "@emotion/react";
 
 import Hero from "#components/Hero";
 import PromoCard, { CardContainer } from "#components/PromoCard";
+import { MainWrapper } from "#components/Layouts";
 import promos from "#constants/home/promos";
-
-const MainWrapper = styled.main`
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 32px;
-  text-align: center;
-`;
 
 const PageTitle = styled.h1`
   padding: 0 16px 16px;

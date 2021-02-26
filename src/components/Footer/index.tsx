@@ -30,7 +30,7 @@ const BackToTopButton = styled.button`
 const ContactDetailsWrapper = styled.div`
   padding: 1.25rem 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 `;
 
@@ -94,7 +94,7 @@ const Footer: React.FC<FooterProps> = () => {
         </ContactDetailsText>
       </ContactDetailsWrapper>
 
-      <ContactDetailsWrapper style={{ justifyContent: "flex-end" }}>
+      <ContactDetailsWrapper style={{ justifyContent: "center" }}>
         <KhoaPhan>
           <span lang="en-GB">
             {`\u00A9`} {`${new Date().getFullYear()}`}{" "}

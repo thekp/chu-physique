@@ -15,6 +15,7 @@ const HeaderWrapper = styled.header`
   width: 100%;
 
   ${({ theme, isScrolling, isTransparent }) => css`
+    // position: ${isTransparent ? "fixed" : "relative"};
     background: ${isScrolling || !isTransparent
       ? theme.color.primary
       : "transparent"};
