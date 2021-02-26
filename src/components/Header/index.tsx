@@ -15,7 +15,6 @@ const HeaderWrapper = styled.header`
   width: 100%;
 
   ${({ theme, isScrolling, isTransparent }) => css`
-    // position: ${isTransparent ? "fixed" : "relative"};
     background: ${isScrolling || !isTransparent
       ? theme.color.primary
       : "transparent"};
@@ -29,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({ isTransparent }) => {
   const [isScrolling, toggleScrolling] = useState(false);
 
   const handleScrolling = () => {
-    if (window.scrollY >= 50) {
+    if (window.scrollY >= 54) {
       toggleScrolling(true);
     } else {
       toggleScrolling(false);

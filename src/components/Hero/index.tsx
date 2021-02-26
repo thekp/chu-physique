@@ -22,7 +22,7 @@ const HeroWrapper = styled.div`
       background-position: 50% 90%;
       background-size: cover;
       background-repeat: no-repeat;
-      min-height: 60vh;
+      min-height: 50vh;
     }
 
     @media (min-width: ${theme.size
@@ -33,7 +33,7 @@ const HeroWrapper = styled.div`
       background-position: 50% 20%;
       background-size: cover;
       background-repeat: no-repeat;
-      min-height: 50vh;
+      min-height: 80vh;
     }
 
     @media (min-width: ${theme.size.GEL_GROUP_5_SCREEN_WIDTH_MIN}) {

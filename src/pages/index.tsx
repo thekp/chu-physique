@@ -13,12 +13,14 @@ const PageTitle = styled.h1`
   padding: 0 16px 16px;
   font-weight: bolder;
   font-size: 32px;
+  color: #5d5457;
 `;
 
 const PageParagraph = styled.p`
   padding: 16px;
   margin: 0 40px;
   line-height: 2rem;
+  color: #5d5457;
   ${({ theme }) => css`
     @media (max-width: ${theme.size.GEL_GROUP_2_SCREEN_WIDTH_MAX}) {
       margin: 0;

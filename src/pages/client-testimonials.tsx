@@ -10,10 +10,11 @@ import testimonials from "#constants/client-testimonials/testimonials";
 
 const ClientWrapper = styled.div`
   margin: 32px 0;
+  color: #5d5457 !important;
 `;
 
 const ClientParagraph = styled.p`
-  padding: 16px;
+  padding-top: 16px;
   margin: 0 40px;
   line-height: 2rem;
   ${({ theme }) => css`
