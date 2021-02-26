@@ -20,7 +20,6 @@ const ClientParagraph = styled.p`
   ${({ theme }) => css`
     @media (max-width: ${theme.size.GEL_GROUP_2_SCREEN_WIDTH_MAX}) {
       margin: 0;
-      padding: 16px 0;
     }
   `};
   font-family: none;
@@ -33,7 +32,7 @@ const ClientName = styled(ClientParagraph)`
   font-style: italic;
 `;
 
-const Home = () => {
+const ClientTestimonials = () => {
   return (
     <>
       <NavSpacer />
@@ -57,4 +56,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ClientTestimonials;

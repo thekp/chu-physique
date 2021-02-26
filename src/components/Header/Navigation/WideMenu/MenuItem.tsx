@@ -39,7 +39,6 @@ const ChildrenList = styled(motion.ul)`
 const ChildItemText = styled(motion.p)`
   width: 100%;
   font-size: 16px;
-  padding: 16px 0;
 
   ${({ theme }) => css`
     color: ${theme.color.secondary};
@@ -102,7 +101,10 @@ const MenuItem: React.FC<NavProps> = ({ item }) => {
   const hasChildrenItems = item.children.length > 0;
 
   return (
-    <ItemWrapper onClick={() => hasChildrenItems && toggleOpen()}>
+    <ItemWrapper
+      onMouseEnter={() => hasChildrenItems && toggleOpen()}
+      onMouseLeave={() => hasChildrenItems && toggleOpen()}
+    >
       <ItemText whileHover={{ scale: 1.1 }}>
         <Link href={item.link}>{item.name}</Link>
         {hasChildrenItems && (

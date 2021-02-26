@@ -1,13 +1,85 @@
-import Head from "next/head";
+import React from "react";
+import Image from "next/image";
+import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 
-const Home = () => {
+import { MainWrapper, NavSpacer } from "#components/Layouts";
+import { PageTitle } from "#components/Core";
+import testimonials from "#constants/client-testimonials/testimonials";
+
+// const MainWrapperExt = styled(MainWrapper)`
+//   ${({ theme }) => css`
+//     @media (max-width: ${theme.size.GEL_GROUP_1_SCREEN_WIDTH_MAX}) {
+//       width: 350px !important;
+//     }
+//   `};
+// `;
+
+const SectionWrapper = styled.section`
+  display: flex;
+  margin: 16px 0;
+  justify-content: center;
+  flex-wrap: wrap;
+`;
+
+const CertList = styled.ul`
+  list-style: none;
+`;
+
+const CertItem = styled.li`
+  text-indent: 0;
+  padding: 12px 0;
+`;
+
+const ImageWrapepr = styled.div`
+  min-width: 300px;
+  width: 50%;
+  padding: 16px;
+  ${({ theme }) => css`
+    @media (max-width: ${theme.size.GEL_GROUP_2_SCREEN_WIDTH_MAX}) {
+      width: 100%;
+      margin-bottom: 24px;
+    }
+  `};
+`;
+
+const Certifications = () => {
   return (
-    <div
-      style={{ minHeight: "85vh", display: "flex", flexDirection: "column" }}
-    >
-      Certifications{" "}
-    </div>
+    <>
+      <NavSpacer />
+      <MainWrapper>
+        <PageTitle style={{ marginTop: "24px" }}>Certifications</PageTitle>
+        <SectionWrapper>
+          <CertList>
+            <CertItem>BSc Sports and Exercise Science</CertItem>
+            <CertItem>Level 3 Personal Training</CertItem>
+            <CertItem>Sports Conditioning</CertItem>
+            <CertItem>ITEC Level 3 Sports Massage Therapist</CertItem>
+          </CertList>
+        </SectionWrapper>
+        <SectionWrapper>
+          <ImageWrapepr>
+            <Image
+              src="/assets/gallery/chu-grad.jpg"
+              alt="Leung wearing university graduation attire"
+              layout="responsive"
+              height={500}
+              width={500}
+            />
+          </ImageWrapepr>
+          <ImageWrapepr>
+            <Image
+              src="/assets/gallery/chu-lifting.jpg"
+              alt="Leung dead lifting over 100kg"
+              layout="responsive"
+              height={600}
+              width={600}
+            />
+          </ImageWrapepr>
+        </SectionWrapper>
+      </MainWrapper>
+    </>
   );
 };
 
-export default Home;
+export default Certifications;
