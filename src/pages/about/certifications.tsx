@@ -3,24 +3,9 @@ import Image from "next/image";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
-import { MainWrapper, NavSpacer } from "#components/Layouts";
+import { MainWrapper, NavSpacer, SectionWrapper } from "#components/Layouts";
 import { PageTitle } from "#components/Core";
 import testimonials from "#constants/client-testimonials/testimonials";
-
-// const MainWrapperExt = styled(MainWrapper)`
-//   ${({ theme }) => css`
-//     @media (max-width: ${theme.size.GEL_GROUP_1_SCREEN_WIDTH_MAX}) {
-//       width: 350px !important;
-//     }
-//   `};
-// `;
-
-const SectionWrapper = styled.section`
-  display: flex;
-  margin: 16px 0;
-  justify-content: center;
-  flex-wrap: wrap;
-`;
 
 const CertList = styled.ul`
   list-style: none;

@@ -4,16 +4,9 @@ import Link from "next/link";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
-import { MainWrapper, NavSpacer } from "#components/Layouts";
+import { MainWrapper, NavSpacer, SectionWrapper } from "#components/Layouts";
 import { PageTitle } from "#components/Core";
 import testimonials from "#constants/client-testimonials/testimonials";
-
-const SectionWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 44px;
-`;
 
 const TextWrapper = styled.div`
   width: 60%;

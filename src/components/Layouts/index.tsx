@@ -20,3 +20,16 @@ export const NavSpacer = styled.div`
     }
   `};
 `;
+
+export const SectionWrapper = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 56px;
+  text-align: left;
+  margin: 0 40px;
+  ${({ theme }) => css`
+    @media (max-width: ${theme.size.GEL_GROUP_2_SCREEN_WIDTH_MAX}) {
+      margin: 0;
+    }
+  `};
+`;
