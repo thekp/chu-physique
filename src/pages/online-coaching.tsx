@@ -24,6 +24,26 @@ const StyledItem = styled.li`
 const EmailForm = styled.form`
   display: flex;
   flex-direction: column;
+  width: 100%;
+`;
+
+const NameWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+const InputLabel = styled.label``;
+
+const NameInput = styled.input`
+  width: 48%;
+  margin-bottom: 16px;
+  padding: 8px 0;
+`;
+
+const FormInput = styled.input`
+  margin-bottom: 16px;
+  padding: 8px 0;
 `;
 
 const OnlineCoaching = () => {
@@ -77,12 +97,47 @@ const OnlineCoaching = () => {
         </SectionWrapper>
         <SectionWrapper>
           <EmailForm>
-            <input></input>
-            <input></input>
-            <input></input>
-            <input></input>
-            <input></input>
-            <button type="submit"></button>
+            <InputLabel>
+              Name <em>*</em>
+            </InputLabel>
+            <NameWrapper>
+              <NameInput id="fname" placeholder="First Name" type="text" />
+              <NameInput id="lname" placeholder="Last Name" type="text" />
+            </NameWrapper>
+            <InputLabel>Age</InputLabel>
+            <FormInput id="age" type="number" />
+            <InputLabel>Email</InputLabel>
+            <FormInput id="email" type="email" />
+            <InputLabel>
+              What are your goals with training? Try to be specific *
+            </InputLabel>
+            <textarea id="w3review" name="w3review" rows="4" cols="50" />
+
+            <InputLabel>
+              What is holding you back from reaching the goals mentioned? *
+            </InputLabel>
+            <textarea id="w3review" name="w3review" rows="4" cols="50" />
+
+            <InputLabel>
+              Have you ever worked with a Coach before? Has it worked out for
+              you? *
+            </InputLabel>
+            <textarea id="w3review" name="w3review" rows="4" cols="50" />
+
+            <InputLabel>
+              Are you ready to invest into Online Coaching? *
+            </InputLabel>
+            <label for="male">
+              <input type="radio" id="male" name="gender" value="male" />
+              yes
+            </label>
+            <label for="female">
+              {" "}
+              <input type="radio" id="female" name="gender" value="female" />
+              no
+            </label>
+
+            <button type="submit">Submit</button>
           </EmailForm>
         </SectionWrapper>
       </MainWrapper>
