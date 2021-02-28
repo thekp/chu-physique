@@ -99,11 +99,7 @@ const Footer: React.FC<FooterProps> = () => {
           <span lang="en-GB">
             {`\u00A9`} {`${new Date().getFullYear()}`}{" "}
           </span>
-          <a
-            href="https://www.linkedin.com/in/thekp"
-            rel="noreferrer"
-            target="_blank"
-          >
+          <a href="http://thekp.dev/" rel="noreferrer" target="_blank">
             WEBSITE CREATED BY KHOA PHAN
           </a>
         </KhoaPhan>

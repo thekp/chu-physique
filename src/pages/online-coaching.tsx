@@ -132,7 +132,6 @@ const OnlineCoaching = () => {
               yes
             </label>
             <label for="female">
-              {" "}
               <input type="radio" id="female" name="gender" value="female" />
               no
             </label>
